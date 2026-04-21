@@ -1,0 +1,45 @@
+{
+  "name": "fiscal-data",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+
+  // Forward Gatsby's default dev server port
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Gatsby Dev Server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  // Install deps automatically when the container starts
+  "postCreateCommand": "npm install --legacy-peer-deps",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Core language support
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+
+        // Gatsby / React helpers
+        "dsznajder.es7-react-js-snippets",
+        "styled-components.vscode-styled-components",
+
+        // Quality-of-life
+        "christian-kohler.path-intellisense",
+        "formulahendry.auto-rename-tag",
+        "usernamehw.errorlens",
+        "mikestead.dotenv"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "js.ts.tsdk.path": "node_modules/typescript/lib"
+      }
+    }
+  }
+}
